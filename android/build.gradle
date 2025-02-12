@@ -27,6 +27,20 @@ apply plugin: 'kotlin-android'
 android {
     namespace "com.diramp.flutter_phone_direct_caller" 
     compileSdkVersion 31
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+        // Configure JVM toolchain
+        java {
+            toolchain {
+                languageVersion.set(JavaLanguageVersion.of(17))
+            }
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 
     defaultConfig {
         minSdkVersion 16
